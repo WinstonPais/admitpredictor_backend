@@ -1,5 +1,5 @@
 ![CI/CD](https://github.com/winstonpais/admitpredictor_backend/workflows/Django%20CI/badge.svg)
-[![codecov](https://codecov.io/gh/winstonpais/admitpredictor-backend/branch/main/graph/badge.svg)](https://codecov.io/gh/winstonpais/admitpredictor-backend)
+[![codecov](https://codecov.io/gh/winstonpais/admitpredictor-backend/branch/main/graph/badge.svg)](https://codecov.io/gh/winstonpais/admitpredictor_backend)
 
 # admitpredictor_backend
 
