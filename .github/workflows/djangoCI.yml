@@ -107,7 +107,7 @@ jobs:
           
       - name: Deploy using Zappa
         run: |
-          zappa init --no_venv
+          zappa init
           zappa deploy dev --no_venv
           
 #       # Deploy main.py to AWS
