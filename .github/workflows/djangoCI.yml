@@ -115,6 +115,11 @@ jobs:
           python -m venv venv
           source venv/bin/activate
           zappa init
+          \n
+          \n
+          \n
+          y
+          y
           zappa deploy dev
           
 #       # Deploy main.py to AWS
