@@ -73,11 +73,11 @@ jobs:
 #         # requirements-files have changed.
 #       - run: pip install -r requirements.txt
 #         if: steps.cache-virtualenv.outputs.cache-hit != 'true'
-      - name: setup Virtual environment
-        run: |
-          ls
-          python -m venv venv
-          source venv/bin/activate
+#       - name: setup Virtual environment
+#         run: |
+#           ls
+#           python -m venv venv
+#           source venv/bin/activate
 
       # Set up cache for pip
       - name: Get pip cache dir
@@ -112,8 +112,10 @@ jobs:
           
       - name: Deploy using Zappa
         run: |
+          python -m venv venv
+          source venv/bin/activate
           zappa init
-          zappa deploy dev --no_venv
+          zappa deploy dev
           
 #       # Deploy main.py to AWS
 #       - name: AWS Lambda Deploy
