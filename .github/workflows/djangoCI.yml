@@ -114,12 +114,7 @@ jobs:
         run: |
           python -m venv venv
           source venv/bin/activate
-          zappa init
-          echo "\n"
-          echo "\n"
-          echo "\n"
-          echo "y"
-          echo "y"
+          printf '\n\n\ny\ny\n' | zappa init
           zappa deploy dev
           
 #       # Deploy main.py to AWS
