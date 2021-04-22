@@ -5,6 +5,6 @@ from django.http import JsonResponse
 
 def index(request):
     response = {
-        'data' : 'Hello World'
+        'data' : 'Hello AWS Lambda'
     }
     return JsonResponse(response)

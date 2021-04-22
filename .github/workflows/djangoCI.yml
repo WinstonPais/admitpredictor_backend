@@ -65,19 +65,6 @@ jobs:
         uses: actions/setup-python@v1
         with:
           python-version: "3.7"
-          
-#       - uses: syphar/restore-pip-download-cache@v1
-#         if: steps.cache-virtualenv.outputs.cache-hit != 'true'
-
-#         # the package installation will only be executed when the
-#         # requirements-files have changed.
-#       - run: pip install -r requirements.txt
-#         if: steps.cache-virtualenv.outputs.cache-hit != 'true'
-#       - name: setup Virtual environment
-#         run: |
-#           ls
-#           python -m venv venv
-#           source venv/bin/activate
 
       # Set up cache for pip
       - name: Get pip cache dir
@@ -99,12 +86,8 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
-#           profile_name: default
-#           project_name: <your project name>
-#           runtime: python3.7
-#           s3_bucket: <your bucket name>
           
-      # Zappa
+      # Install Zappa
       - name: Install Zappa
         run: |
           python -m pip install --upgrade pip
@@ -114,14 +97,4 @@ jobs:
         run: |
           python -m venv venv
           source venv/bin/activate
-          printf '\n\n\ny\ny\n' | zappa init
-          zappa deploy dev
-          
-#       # Deploy main.py to AWS
-#       - name: AWS Lambda Deploy
-#         uses: appleboy/lambda-action@v0.0.4
-#         with:
-#               #name of my AWS Lambda Function
-#               function_name: <your function name>
-#               #contains all the files in my github repository
-#               zip_file: <your function name>.zip
+          zappa update dev

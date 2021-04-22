@@ -15,6 +15,6 @@ class TestView(APITestCase):
 
         response = self.client.get('')
         expectedResponse = {
-            'data' : 'Hello World'
+            'data' : 'Hello AWS Lambda'
         }
         self.assertEqual(response.json(), expectedResponse)
