@@ -66,26 +66,26 @@ jobs:
         with:
           python-version: "3.7"
           
-      - uses: syphar/restore-pip-download-cache@v1
-        if: steps.cache-virtualenv.outputs.cache-hit != 'true'
+#       - uses: syphar/restore-pip-download-cache@v1
+#         if: steps.cache-virtualenv.outputs.cache-hit != 'true'
 
-        # the package installation will only be executed when the
-        # requirements-files have changed.
-      - run: pip install -r requirements.txt
-        if: steps.cache-virtualenv.outputs.cache-hit != 'true'
+#         # the package installation will only be executed when the
+#         # requirements-files have changed.
+#       - run: pip install -r requirements.txt
+#         if: steps.cache-virtualenv.outputs.cache-hit != 'true'
 
-#       # Set up cache for pip
-#       - name: Get pip cache dir
-#         id: pip-cache
-#         run: |
-#           echo "::set-output name=dir::$(pip cache dir)"
-#       - name: Cache pip
-#         uses: actions/cache@v1
-#         with:
-#           path: ${{ steps.pip-cache.outputs.dir }}
-#           key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
-#           restore-keys: |
-#             ${{ runner.os }}-pip-
+      # Set up cache for pip
+      - name: Get pip cache dir
+        id: pip-cache
+        run: |
+          echo "::set-output name=dir::$(pip cache dir)"
+      - name: Cache pip
+        uses: actions/cache@v1
+        with:
+          path: ${{ steps.pip-cache.outputs.dir }}
+          key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+          restore-keys: |
+            ${{ runner.os }}-pip-
           
       # Configure AWS Credentials
       - name: Configure AWS Credentials
@@ -107,8 +107,8 @@ jobs:
           
       - name: Deploy using Zappa
         run: |
-          zappa init
-          zappa deploy dev
+          zappa init --no_venv
+          zappa deploy dev --no_venv
           
 #       # Deploy main.py to AWS
 #       - name: AWS Lambda Deploy
