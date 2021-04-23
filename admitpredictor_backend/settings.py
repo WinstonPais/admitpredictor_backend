@@ -77,16 +77,24 @@ WSGI_APPLICATION = 'admitpredictor_backend.wsgi.application'
 DATABASES = {
     # 'default': {
     #     'ENGINE': 'django.db.backends.postgresql',
-    #     'USER': 'mupplito',
-    #     'NAME': 'mupplito',
-    #     'PASSWORD': 'oeD5fK7l_gwaX0mIJu5_HPJqWXBeGx0x',
-    #     'HOST' : 'queenie.db.elephantsql.com',
+    #     'USER': 'default',
+    #     'NAME': 'default',
+    #     'PASSWORD': '',
+    #     'HOST' : 'localhost',
     #     'PORT' : '5432'
     # },
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+        'ENGINE': 'django.db.backends.postgresql',
+        'USER': 'mupplito',
+        'NAME': 'mupplito',
+        'PASSWORD': 'oeD5fK7l_gwaX0mIJu5_HPJqWXBeGx0x',
+        'HOST' : 'queenie.db.elephantsql.com',
+        'PORT' : '5432'
+    },
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    # }
 }
 
 
