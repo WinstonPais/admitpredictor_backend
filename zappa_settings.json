@@ -4,6 +4,7 @@
         "django_settings": "admitpredictor_backend.settings",
         "project_name": "admitpredictor-",
         "runtime": "python3.7",
+        "use_precompiled_packages": false,
         "s3_bucket": "zappa-lnoqx9rca"
     }
 }
