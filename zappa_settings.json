@@ -2,7 +2,6 @@
     "dev": {
         "aws_region": "ap-south-1",
         "django_settings": "admitpredictor_backend.settings",
-        "profile_name": "default",
         "project_name": "admitpredictor-",
         "runtime": "python3.7",
         "s3_bucket": "zappa-lnoqx9rca"
