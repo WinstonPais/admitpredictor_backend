@@ -77,10 +77,10 @@ WSGI_APPLICATION = 'admitpredictor_backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'emptytDummyDB',
+        'NAME': '/var/run/postgresql/.s.PGSQL.5432',
         'USER': '',
         'PASSWORD': '',
-        'HOST': '',
+        'HOST': '/var/run/postgresql/.s.PGSQL.5432',
         'PORT': '',
     }
 }
