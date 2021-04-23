@@ -44,6 +44,8 @@ jobs:
       run: |
         pip install coverage
         sudo -u postgres psql -c "ALTER USER mupplito CREATEDB"
+        ps -ef | grep postgres
+        man postgres
         coverage run --source='.' manage.py test
         
     - name: Upload coverage to Codecov
