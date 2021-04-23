@@ -43,7 +43,6 @@ jobs:
     - name: Run Tests and generate coverage report
       run: |
         pip install coverage
-        sudo -u postgres psql -c "ALTER USER mupplito CREATEDB WITH PASSWORD 'oeD5fK7l_gwaX0mIJu5_HPJqWXBeGx0x'"
         coverage run --source='.' manage.py test
         
     - name: Upload coverage to Codecov
