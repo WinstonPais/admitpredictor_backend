@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'mainapp',
-    'django_s3_sqlite',
 ]
 
 MIDDLEWARE = [
@@ -76,9 +75,13 @@ WSGI_APPLICATION = 'admitpredictor_backend.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django_s3_sqlite",
-        "NAME": "sqlite.db",
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'emptytDummyDB',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '',
+        'PORT': '',
     }
 }
 
