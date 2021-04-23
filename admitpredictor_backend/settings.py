@@ -86,11 +86,11 @@ DATABASES = {
     # },
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'USER': 'mupplito',
-        'NAME': 'mupplito',
-        'PASSWORD': 'oeD5fK7l_gwaX0mIJu5_HPJqWXBeGx0x',
-        'HOST' : 'queenie.db.elephantsql.com',
-        'PORT' : '5432'
+        'USER': '',
+        'NAME': '',
+        'PASSWORD': '',
+        'HOST' : '',
+        'PORT' : ''
     },
     # 'default': {
     #     'ENGINE': 'django.db.backends.sqlite3',
