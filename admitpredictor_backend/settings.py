@@ -79,6 +79,7 @@ DATABASES = {
     "default": {
         "ENGINE": "django_s3_sqlite",
         "NAME": "sqlite.db",
+
     }
 }
 
