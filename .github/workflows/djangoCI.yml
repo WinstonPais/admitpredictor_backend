@@ -114,3 +114,4 @@ jobs:
           python -m venv venv
           source venv/bin/activate
           zappa update dev
+          zappa tail
