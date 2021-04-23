@@ -115,17 +115,14 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ap-south-1
           
-      # Install Zappa
-      - name: Install Zappa
+      - name: Install and Deploy using Zappa
         run: |
           python -m pip install --upgrade pip
-          pip install zappa
-          sudo apt-get install libpq-dev
-          
-      - name: Deploy using Zappa
-        run: |
           python -m venv venv
           source venv/bin/activate
+          pip install zappa
+          sudo apt-get install libpq-dev
+          pip install -r requirements.txt
           zappa update dev
 
       - name: The job has failed
