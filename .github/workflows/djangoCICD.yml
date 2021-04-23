@@ -1,4 +1,4 @@
-name: Django CI
+name: Django CI CD
 
 on:
   push: 
@@ -72,18 +72,6 @@ jobs:
     
     if: github.ref == 'refs/heads/main'
 
-    services:
-      postgres:
-        image: postgres:10.8
-        env:
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
-          POSTGRES_DB: github_actions
-        ports:
-          - 5432:5432
-        # needed because the postgres container does not provide a healthcheck
-        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
-
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE
       - uses: actions/checkout@v2
@@ -121,10 +109,5 @@ jobs:
           python -m venv venv
           source venv/bin/activate
           pip install zappa
-          sudo apt-get install libpq-dev
           pip install -r requirements.txt
           zappa update dev
-
-      - name: The job has failed
-        if: ${{ failure() }}
-        run:  zappa tail
