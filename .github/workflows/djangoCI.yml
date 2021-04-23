@@ -114,4 +114,7 @@ jobs:
           python -m venv venv
           source venv/bin/activate
           zappa update dev
-          zappa tail
+          
+      - name: The job has failed
+        if: ${{ failure() }}
+        run:  zappa tail
