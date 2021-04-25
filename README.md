@@ -1,3 +1,6 @@
+![CI/CD](https://github.com/winstonpais/admitpredictor_backend/workflows/Django%20CI%20CD/badge.svg)
+[![codecov](https://codecov.io/gh/winstonpais/admitpredictor_backend/branch/main/graph/badge.svg)](https://codecov.io/gh/winstonpais/admitpredictor_backend)
+
 # admitpredictor_backend
 
 ## Installation
