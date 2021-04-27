@@ -21,7 +21,7 @@ python -m venv <Path to Environment>
 ```
 To activate this environment for windows
 ```
-venv\Scripts\activate.bat
+<Environment Name>  \Scripts\activate.bat
 ```
 Install the environment Requirements
 ```
