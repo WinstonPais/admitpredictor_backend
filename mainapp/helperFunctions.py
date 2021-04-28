@@ -10,16 +10,3 @@ def getModel(algorithm):
         return None
 
     return model
-
-def getParametersFromQueryString(request, parameters):
-    inputParameters = { parameter : None for parameter in parameters} 
-    validQueryString = True
-
-    for parameter in parameters:
-        try:
-            inputParameters[parameter] = request.GET.get(f'{parameter}')
-        except:
-            inputParameters[parameter] = None
-            validQueryString = False
-
-    return inputParameters, validQueryString
