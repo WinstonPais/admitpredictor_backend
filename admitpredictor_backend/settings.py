@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'admitpredictor_backend.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'github_actions',
+        'NAME': 'finalyearproject',
         'USER': 'postgres',
         'PASSWORD': os.environ.get('POSTGRES_PASSWORD'),
         'HOST': '127.0.0.1',
