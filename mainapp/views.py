@@ -38,3 +38,37 @@ def sklearnLinearRegression(request):
     response['chanceOfAdmit'] = chanceOfAdmit[0]
 
     return JsonResponse(response)
+
+def tensorflowNeuralNetworks(request):
+    # http://127.0.0.1:8000/tensorflow_neuralNetwork/?GREScore=337&TOEFLScore=118&UniversityRating=4&SOP=4.5&LOR=4.5&CGPA=9.65&Research=1
+    response = {
+        'message' : 'An Unknown Error has occoured',
+        'success' : False
+    }
+
+    model = getModel('tensorflow_neuralNetworks')
+    if not model:
+        response['message'] = 'tensorflow Neural Network pickeled model was not found'
+        return JsonResponse(response)
+
+    parameters = ['GREScore', 'TOEFLScore', 'UniversityRating', 'SOP', 'LOR', 'CGPA', 'Research']
+    inputParameters = { parameter : request.GET.get(f'{parameter}') for parameter in parameters}
+    response['inputParameters'] = inputParameters
+    
+    try:
+        modelInput = [inputParameters[parameter] for parameter in parameters]
+        modelInput = list(map(float, modelInput))
+        print('Hello')
+        print(modelInput)
+        chanceOfAdmit = model.predict([modelInput])
+        print(chanceOfAdmit)
+        print(chanceOfAdmit[0][0])
+    except:
+        response['message'] = 'Invalid Input Parameters/Query String'
+        return JsonResponse(response)
+
+    response['message'] = 'Successfully Predicted Chance Of Admit'
+    response['success'] = True
+    response['chanceOfAdmit'] = str(round(chanceOfAdmit[0][0], 2))
+
+    return JsonResponse(response)

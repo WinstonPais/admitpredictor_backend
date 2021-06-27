@@ -1,6 +1,6 @@
 from django.test import SimpleTestCase
 from django.urls import reverse, resolve
-from mainapp.views import index, sklearnLinearRegression
+from mainapp.views import index, sklearnLinearRegression, tensorflowNeuralNetworks
 
 
 class TestUrls(SimpleTestCase):
@@ -12,3 +12,7 @@ class TestUrls(SimpleTestCase):
     def test_sklearnLinearRegression_url_is_resolved(self):
         url = reverse('mainapp:sklearnLinearRegression')
         self.assertEquals(resolve(url).func, sklearnLinearRegression)
+
+    def test_tensorflowNeuralNetworks_url_is_resolved(self):
+        url = reverse('mainapp:tensorflowNeuralNetworks')
+        self.assertEquals(resolve(url).func, tensorflowNeuralNetworks)
