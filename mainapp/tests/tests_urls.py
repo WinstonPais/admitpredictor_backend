@@ -9,9 +9,9 @@ class TestUrls(SimpleTestCase):
         url = reverse('mainapp:index')
         self.assertEquals(resolve(url).func, index)
 
-    def test_sklearnLinearRegression_url_is_resolved(self):
-        url = reverse('mainapp:sklearnLinearRegression')
-        self.assertEquals(resolve(url).func, sklearnLinearRegression)
+    # def test_sklearnLinearRegression_url_is_resolved(self):
+    #     url = reverse('mainapp:sklearnLinearRegression')
+    #     self.assertEquals(resolve(url).func, sklearnLinearRegression)
 
     def test_tensorflowNeuralNetworks_url_is_resolved(self):
         url = reverse('mainapp:tensorflowNeuralNetworks')
