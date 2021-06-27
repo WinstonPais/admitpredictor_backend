@@ -1,6 +1,6 @@
 from django.test import SimpleTestCase
 from django.urls import reverse, resolve
-from mainapp.views import index, sklearnLinearRegression, tensorflowNeuralNetworks
+from mainapp.views import index, tensorflowNeuralNetworks
 
 
 class TestUrls(SimpleTestCase):

@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import JsonResponse
-# from .helperFunctions import getModel
+from .helperFunctions import getModel
 
 # Create your views here.
 
