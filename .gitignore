@@ -96,6 +96,7 @@ env.bak/
 venv.bak/
 devVenv/
 *.env
+awstestenv/
 
 # Spyder project settings
 .spyderproject
@@ -119,3 +120,5 @@ dmypy.json
 .vscode
 
 .idea/
+# AWS
+*.pem
