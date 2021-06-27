@@ -40,3 +40,25 @@ class TestSklearnLinearRegressionView(APITestCase):
         response = self.client.get('/sklearn_LinearRegression/?blablabla=ggff')
         
         self.assertEqual(response.json()['success'], False)
+
+class TestTensorflowNeuralNetworksView(APITestCase):
+
+    def test_TensorflowNeuralNetworks_view_status_code(self):
+
+        response = self.client.get('/tensorflow_neuralNetworks/')
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+        response = self.client.get('/tensorflow_neuralNetworks/?GREScore=337&TOEFLScore=118&UniversityRating=4&SOP=4.5&LOR=4.5&CGPA=9.65&Research=1')
+        self.assertEqual(response.status_code, status.HTTP_200_OK)
+
+    def test_TensorflowNeuralNetworks_view_json_data_success(self):
+
+        response = self.client.get('/tensorflow_neuralNetworks/?GREScore=337&TOEFLScore=118&UniversityRating=4&SOP=4.5&LOR=4.5&CGPA=9.65&Research=1')
+        
+        self.assertEqual(response.json()['success'], True)
+
+    def test_TensorflowNeuralNetworks_view_json_data_Invalid(self):
+
+        response = self.client.get('/tensorflow_neuralNetworks/?blablabla=ggff')
+        
+        self.assertEqual(response.json()['success'], False)
