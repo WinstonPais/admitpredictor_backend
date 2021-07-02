@@ -40,7 +40,7 @@ def index(request):
 #     return JsonResponse(response)
 
 def tensorflowNeuralNetworks(request):
-    # http://127.0.0.1:8000/tensorflow_neuralNetwork/?GREScore=337&TOEFLScore=118&UniversityRating=4&SOP=4.5&LOR=4.5&CGPA=9.65&Research=1
+    # http://127.0.0.1:8000/tensorflow_neuralNetworks/?GREScore=337&TOEFLScore=118&UniversityRating=4&SOP=4.5&LOR=4.5&CGPA=9.65&Research=1
     response = {
         'message' : 'An Unknown Error has occoured',
         'success' : False
