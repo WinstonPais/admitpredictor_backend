@@ -58,11 +58,7 @@ def tensorflowNeuralNetworks(request):
     try:
         modelInput = [inputParameters[parameter] for parameter in parameters]
         modelInput = list(map(float, modelInput))
-        print('Hello')
-        print(modelInput)
         chanceOfAdmit = model.predict([modelInput])
-        print(chanceOfAdmit)
-        print(chanceOfAdmit[0][0])
     except:
         response['message'] = 'Invalid Input Parameters/Query String'
         return JsonResponse(response)
