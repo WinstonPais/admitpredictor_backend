@@ -19,27 +19,27 @@ class TestIndexView(APITestCase):
         }
         self.assertEqual(response.json(), expectedResponse)
 
-class TestSklearnLinearRegressionView(APITestCase):
+# class TestSklearnLinearRegressionView(APITestCase):
 
-    def test_SklearnLinearRegression_view_status_code(self):
+#     def test_SklearnLinearRegression_view_status_code(self):
 
-        response = self.client.get('/sklearn_LinearRegression/')
-        self.assertEqual(response.status_code, status.HTTP_200_OK)
+#         response = self.client.get('/sklearn_LinearRegression/')
+#         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
-        response = self.client.get('/sklearn_LinearRegression/?GREScore=337&TOEFLScore=118&UniversityRating=4&SOP=4.5&LOR=4.5&CGPA=9.65&Research=1')
-        self.assertEqual(response.status_code, status.HTTP_200_OK)
+#         response = self.client.get('/sklearn_LinearRegression/?GREScore=337&TOEFLScore=118&UniversityRating=4&SOP=4.5&LOR=4.5&CGPA=9.65&Research=1')
+#         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
-    def test_SklearnLinearRegression_view_json_data_success(self):
+#     def test_SklearnLinearRegression_view_json_data_success(self):
 
-        response = self.client.get('/sklearn_LinearRegression/?GREScore=337&TOEFLScore=118&UniversityRating=4&SOP=4.5&LOR=4.5&CGPA=9.65&Research=1')
+#         response = self.client.get('/sklearn_LinearRegression/?GREScore=337&TOEFLScore=118&UniversityRating=4&SOP=4.5&LOR=4.5&CGPA=9.65&Research=1')
         
-        self.assertEqual(response.json()['success'], True)
+#         self.assertEqual(response.json()['success'], True)
 
-    def test_SklearnLinearRegression_view_json_data_Invalid(self):
+#     def test_SklearnLinearRegression_view_json_data_Invalid(self):
 
-        response = self.client.get('/sklearn_LinearRegression/?blablabla=ggff')
+#         response = self.client.get('/sklearn_LinearRegression/?blablabla=ggff')
         
-        self.assertEqual(response.json()['success'], False)
+#         self.assertEqual(response.json()['success'], False)
 
 class TestTensorflowNeuralNetworksView(APITestCase):
 
