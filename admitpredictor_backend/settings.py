@@ -57,8 +57,8 @@ MIDDLEWARE = [
 
 CORS_ALLOW_CREDENTIALS = True
 CORS_ORIGIN_WHITELIST = [
-    'http://localhost:3000/',
-    'https://winstonpais.github.io/',
+    'http://localhost:3000',
+    'https://winstonpais.github.io',
 ]
 
 ROOT_URLCONF = 'admitpredictor_backend.urls'
